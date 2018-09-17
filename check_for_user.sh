@@ -44,7 +44,7 @@ for path in "$HOME_DIR"*; do
     
     if drush uinf $username | grep -q "User status   :  active"; then
         echo "$username is a in $dirname" | tee -a /root/check_for_user/user.log
-	echo " " >> user.log
+        drush ublk "$username"
     lse
 	echo "user not found in $DIR_HOME"
         continue
